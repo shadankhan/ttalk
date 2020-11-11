@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title>Totalk | Create Profile</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bulma.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <link rel="stylesheet" href="{% static 'css/core.css'%}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+</head>
+
+<body class="is-white">
+
+    <!-- Pageloader -->
+    <div class="pageloader"></div>
+    <div class="infraloader is-active"></div>
+    <div class="login-wrapper">
+
+        <!-- Main Wrapper -->
+        <div class="login-wrapper columns is-gapless">
+            <!--Left Side (Desktop Only)-->
+            <div class="column is-6 is-hidden-mobile hero-banner">
+                <div class="hero is-fullheight is-login">
+                    <div class="hero-body">
+                        <div class="container">
+                            <div class="left-caption">
+                                <h2>Welocome to Totalk , .</h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--Right Side-->
+            <div class="column is-6">
+                <div class="hero form-hero is-fullheight">
+                    <!--Logo-->
+                    <div class="logo-wrap">
+                        <div class="wrap-inner">
+                            <img src="{% static 'img/logo/friendkit-white.svg'%}" alt="">
+                        </div>
+                    </div>
+                    <!--Login Form-->
+                    <div class="hero-body">
+                        <div class="form-wrapper">
+                            <!--Avatar-->
+                            <div class="avatar">
+                                <div class="badge">
+                                    <i data-feather="check"></i>
+                                </div>
+                                <img src="https://placehold.it/128x128" data-demo-src="assets/img/avatars/jenna.png" alt="">
+                            </div>
+                            <!--Form-->
+                            <center>
+                            {% for message in messages %}
+                            <p style="color:red">*{{message}}*</p>
+                            {% endfor %}
+                            </center>
+                            <br>
+                            <form action='create_profile' method='post'>
+                            	{% csrf_token %}
+                            <div class="login-form">
+                                <div class="field">
+                                    <div class="control">
+                                        <input class="input email-input" type="text" placeholder="Enter Your Location" name="location">
+                                        <div class="input-icon">
+                                            <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-exclamation" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+  <path d="M7.002 11a1 1 0 1 1 2 0 1 1 0 0 1-2 0zM7.1 4.995a.905.905 0 1 1 1.8 0l-.35 3.507a.552.552 0 0 1-1.1 0L7.1 4.995z"/>
+</svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="control">
+                                    	<label>Upload your profile pic:</label>
+                                        <input type="file"  name="profile_pic">
+
+                                        
+                                    </div>
+                                </div><br>
+                                
+                                <div class="field">
+                                    <div class="control">
+                                        <input type="submit" class="button is-solid primary-button raised is-rounded is-fullwidth">
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        
+                           
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Concatenated js plugins and jQuery -->
+    <script src="{% static 'js/app.js'%}"></script>
+
+    <!-- Core js -->
+    <script src="{% static 'data/tipuedrop_content.js'%}"></script>
+    <script src="{% static 'js/global.js'%}"></script>
+    <script src="{% static 'js/main.js'%}"></script>
+</body>
+
+</html>

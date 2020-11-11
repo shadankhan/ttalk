@@ -1,0 +1,1242 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+    <title> Totalk | Feed</title>
+    <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:600,700,800,900" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/fontisto@v3.0.4/css/fontisto/fontisto-brands.min.css" rel="stylesheet">
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="{% static 'css/bulma.css' %}">
+    <link rel="stylesheet" href="{% static 'css/app.css' %}">
+    <link rel="stylesheet" href="{% static 'css/core.css' %}">
+</head>
+
+<body>
+
+    <!-- Pageloader -->
+    <div class="pageloader"></div>
+    <div class="infraloader is-active"></div>
+    <div class="app-overlay"></div>
+
+    <div id="main-navbar" class="navbar is-inline-flex is-transparent no-shadow is-hidden-mobile">
+        <div class="container is-fluid">
+            <div class="navbar-brand">
+                <a href="/" class="navbar-item">
+                    <img class="logo" src="assets/img/logo/friendkit-bold.svg" width="112" height="28" alt="">
+                </a>
+            </div>
+            <div class="navbar-menu">
+                <div class="navbar-start">
+                    <!-- Navbar Search -->
+
+                   
+                    
+                   
+
+                       
+                    
+                </div>
+
+                <div class="navbar-end">
+
+                    <div class="navbar-item">
+                        <div id="global-search" class="control">
+                            <input id="tipue_drop_input" class="input is-rounded" type="text" placeholder="Search" required>
+                            <span id="clear-search" class="reset-search">
+                                    <i data-feather="x"></i>
+                                </span>
+                            <span class="search-icon">
+                                    <i data-feather="search"></i>
+                                </span>
+                            <span class="drop-icon">
+                                    <i data-feather="more-vertical"></i>
+                                </span>
+
+                            <!-- Search Dropdown -->
+                            <div class="search-options">
+                                <ul class="options-list">
+                                    <!-- Search Option -->
+                                    <li class="is-selected">
+                                        <!--label class="material-radio">
+                                                <input type="radio" name="search-type" checked>
+                                                <span class="radio-label"></span>
+                                            </label-->
+                                        <span class="option-icon">
+                                                <i data-feather="search"></i>
+                                            </span>
+                                        <span class="option-description">
+                                                <span>Search All</span>
+                                        <span>Search everything </span>
+                                        </span>
+                                    </li>
+                                    <!-- Search Option -->
+                                    <li>
+                                        <span class="option-icon">
+                                                <i data-feather="users"></i>
+                                            </span>
+                                        <span class="option-description">
+                                                <span>Search People</span>
+                                        <span>Search accross people and friends</span>
+                                        </span>
+                                    </li>
+                                    <!-- Search Option -->
+                                    <li>
+                                        <span class="option-icon">
+                                                <i data-feather="file-text"></i>
+                                            </span>
+                                        <span class="option-description">
+                                                <span>Logout</span>
+                                        <span><a href="/accounts/logout">Logout</a></span>
+                                        </span>
+                                    </li>
+                                </ul>
+                                <!-- Close -->
+                                <div class="is-close">
+                                    <button id="close-search-options" type="button" class="button is-solid grey-button">Close</button>
+                                </div>
+                            </div>
+
+                            <div id="tipue_drop_content"></div>
+                        </div>
+
+                    </div>
+                    
+                        <!-- Cart dropdown -->
+                        
+                    <div id="account-dropdown" class="navbar-item is-account drop-trigger has-caret">
+                        <div class="user-image">
+                            <img src="https://via.placeholder.com/400x400" data-demo-src="assets/img/avatars/jenna.png" alt="">
+                            <span class="indicator"></span>
+                        </div>
+
+                        <div class="nav-drop is-account-dropdown">
+                            <div class="inner">
+                                <div class="nav-drop-header">
+                                    <span class="username">Jenna Davis</span>
+                                    <a href="profile-main.html">Profile</a>
+                                </div>
+                                <div class="nav-drop-body account-items">
+                                    <a id="profile-link" href="/profile-main.html" class="account-item">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <div class="image">
+                                                    <img src="https://via.placeholder.com/400x400" data-demo-src="assets/img/avatars/jenna.png" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="media-content">
+                                                <h3>{{profile.user}}</h3>
+                                                <small>Main account</small>
+                                            </div>
+                                            <div class="media-right">
+                                                <i data-feather="check"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <hr class="account-divider">
+                                    <a href="/pages-main.html" class="account-item">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <div class="image">
+                                                    <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/hanzo.svg" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="media-content">
+                                                <h3>Css Ninja</h3>
+                                                <small>Company page</small>
+                                            </div>
+                                            <div class="media-right is-hidden">
+                                                <i data-feather="check"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="/pages-main.html" class="account-item">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <div class="image">
+                                                    <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/icons/logos/fastpizza.svg" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="media-content">
+                                                <h3>Fast Pizza</h3>
+                                                <small>Company page</small>
+                                            </div>
+                                            <div class="media-right is-hidden">
+                                                <i data-feather="check"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a href="/pages-main.html" class="account-item">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <div class="image">
+                                                    <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/icons/logos/slicer.svg" alt="">
+                                                </div>
+                                            </div>
+                                            <div class="media-content">
+                                                <h3>Slicer</h3>
+                                                <small>Company page</small>
+                                            </div>
+                                            <div class="media-right is-hidden">
+                                                <i data-feather="check"></i>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <hr class="account-divider">
+                                    <a href="/options-settings.html" class="account-item">
+                                        <div class="media">
+                                            <div class="icon-wrap">
+                                                <i data-feather="settings"></i>
+                                            </div>
+                                            <div class="media-content">
+                                                <h3>Settings</h3>
+                                                <small>Access widget settings.</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="account-item">
+                                        <div class="media">
+                                            <div class="icon-wrap">
+                                                <i data-feather="life-buoy"></i>
+                                            </div>
+                                            <div class="media-content">
+                                                <h3>Help</h3>
+                                                <small>Contact our support.</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                    <a class="account-item">
+                                        <div class="media">
+                                            <div class="icon-wrap">
+                                                <i data-feather="power"></i>
+                                            </div>
+                                            <div class="media-content">
+                                                <h3>Log out</h3>
+                                                <small>Log out from your account.</small>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navbar-item is-plus-menu is-hidden">
+                        <a id="plus-menu" class="button action-button is-solid primary-button raised">
+                            <i data-feather="plus"></i>
+                        </a>
+                        <div class="plus-drop">
+                            <div class="drop-content">
+                                <a>
+                                    <i data-feather="book"></i>
+                                    <div class="meta">
+                                        <span>Guides</span>
+                                        <span>Learn everything fast</span>
+                                    </div>
+                                </a>
+                                <a>
+                                    <i data-feather="help-circle"></i>
+                                    <div class="meta">
+                                        <span>FAQ</span>
+                                        <span>Most asked questions</span>
+                                    </div>
+                                </a>
+                                <a>
+                                    <i data-feather="life-buoy"></i>
+                                    <div class="meta">
+                                        <span>Assistance</span>
+                                        <span>Get in touch with support</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <nav class="navbar mobile-navbar is-hidden-desktop" aria-label="main navigation">
+        <!-- Brand -->
+        <div class="navbar-brand">
+            <a class="navbar-item" href="/">
+                <img src="assets/img/logo/friendkit.svg" alt="">
+            </a>
+
+            <div class="navbar-item is-icon drop-trigger">
+                <a class="icon-link is-secondary is-friends" href="javascript:void(0);">
+                    <i data-feather="heart"></i>
+                    <span class="indicator"></span>
+                </a>
+
+                <div class="nav-drop">
+                    <div class="inner">
+                        <div class="nav-drop-header">
+                            <span>Friend requests</span>
+                            <a href="#">
+                                <i data-feather="search"></i>
+                            </a>
+                        </div>
+                        <div class="nav-drop-body is-friend-requests">
+                            <!-- Friend request -->
+                            <div class="media">
+                                <figure class="media-left">
+                                    <p class="image">
+                                        <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/bobby.jpg" alt="">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <a href="#">Bobby Brown</a>
+                                    <span>Najeel verwick is a common friend</span>
+                                </div>
+                                <div class="media-right">
+                                    <button class="button icon-button is-solid grey-button raised">
+                                        <i data-feather="user-plus"></i>
+                                    </button>
+                                    <button class="button icon-button is-solid grey-button raised">
+                                        <i data-feather="user-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Friend request -->
+                            <div class="media">
+                                <figure class="media-left">
+                                    <p class="image">
+                                        <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/dan.jpg" alt="">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <a href="#">Dan Walker</a>
+                                    <span>You have 4 common friends</span>
+                                </div>
+                                <div class="media-right">
+                                    <button class="button icon-button is-solid grey-button raised">
+                                        <i data-feather="user-plus"></i>
+                                    </button>
+                                    <button class="button icon-button is-solid grey-button raised">
+                                        <i data-feather="user-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Friend request -->
+                            <div class="media">
+                                <figure class="media-left">
+                                    <p class="image">
+                                        <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/nelly.png" alt="">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <span>You are now friends with <a href="#">Nelly Schwartz</a>. Check her <a href="#">profile</a>.</span>
+                                </div>
+                                <div class="media-right">
+                                    <div class="added-icon">
+                                        <i data-feather="tag"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Friend request -->
+                            <div class="media">
+                                <figure class="media-left">
+                                    <p class="image">
+                                        <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/milly.jpg" alt="">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <a href="#">Milly Augustine</a>
+                                    <span>You have 8 common friends</span>
+                                </div>
+                                <div class="media-right">
+                                    <button class="button icon-button is-solid grey-button raised">
+                                        <i data-feather="user-plus"></i>
+                                    </button>
+                                    <button class="button icon-button is-solid grey-button raised">
+                                        <i data-feather="user-minus"></i>
+                                    </button>
+                                </div>
+                            </div>
+                            <!-- Friend request -->
+                            <div class="media">
+                                <figure class="media-left">
+                                    <p class="image">
+                                        <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/elise.jpg" alt="">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <span>You are now friends with <a href="#">Elise Walker</a>. Check her <a href="#">profile</a>.</span>
+                                </div>
+                                <div class="media-right">
+                                    <div class="added-icon">
+                                        <i data-feather="tag"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Friend request -->
+                            <div class="media">
+                                <figure class="media-left">
+                                    <p class="image">
+                                        <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/edward.jpeg" alt="">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <span>You are now friends with <a href="#">Edward Mayers</a>. Check his <a href="#">profile</a>.</span>
+                                </div>
+                                <div class="media-right">
+                                    <div class="added-icon">
+                                        <i data-feather="tag"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav-drop-footer">
+                            <a href="#">View All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-item is-icon drop-trigger">
+                <a class="icon-link" href="javascript:void(0);">
+                    <i data-feather="bell"></i>
+                    <span class="indicator"></span>
+                </a>
+
+                <div class="nav-drop">
+                    <div class="inner">
+                        <div class="nav-drop-header">
+                            <span>Notifications</span>
+                            <a href="#">
+                                <i data-feather="bell"></i>
+                            </a>
+                        </div>
+                        <div class="nav-drop-body is-notifications">
+                            <!-- Notification -->
+                            <div class="media">
+                                <figure class="media-left">
+                                    <p class="image">
+                                        <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/david.jpg" alt="">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <span><a href="#">David Kim</a> commented on <a href="#">your post</a>.</span>
+                                    <span class="time">30 minutes ago</span>
+                                </div>
+                                <div class="media-right">
+                                    <div class="added-icon">
+                                        <i data-feather="message-square"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Notification -->
+                            <div class="media">
+                                <figure class="media-left">
+                                    <p class="image">
+                                        <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/daniel.jpg" alt="">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <span><a href="#">Daniel Wellington</a> liked your <a href="#">profile.</a></span>
+                                    <span class="time">43 minutes ago</span>
+                                </div>
+                                <div class="media-right">
+                                    <div class="added-icon">
+                                        <i data-feather="heart"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Notification -->
+                            <div class="media">
+                                <figure class="media-left">
+                                    <p class="image">
+                                        <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/stella.jpg" alt="">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <span><a href="#">Stella Bergmann</a> shared a <a href="#">New video</a> on your wall.</span>
+                                    <span class="time">Yesterday</span>
+                                </div>
+                                <div class="media-right">
+                                    <div class="added-icon">
+                                        <i data-feather="youtube"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Notification -->
+                            <div class="media">
+                                <figure class="media-left">
+                                    <p class="image">
+                                        <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/elise.jpg" alt="">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <span><a href="#">Elise Walker</a> shared an <a href="#">Image</a> with you an 2 other people.</span>
+                                    <span class="time">2 days ago</span>
+                                </div>
+                                <div class="media-right">
+                                    <div class="added-icon">
+                                        <i data-feather="image"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav-drop-footer">
+                            <a href="#">View All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-item is-icon drop-trigger">
+                <a class="icon-link is-active" href="javascript:void(0);">
+                    <i data-feather="mail"></i>
+                    <span class="indicator"></span>
+                </a>
+
+                <div class="nav-drop">
+                    <div class="inner">
+                        <div class="nav-drop-header">
+                            <span>Messages</span>
+                            <a href="messages-inbox.html">Inbox</a>
+                        </div>
+                        <div class="nav-drop-body is-friend-requests">
+                            <!-- Message -->
+                            <div class="media">
+                                <figure class="media-left">
+                                    <p class="image">
+                                        <img src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/nelly.png" data-user-popover="9" alt="">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <a href="#">Nelly Schwartz</a>
+                                    <span>I think we should meet near the Starbucks so we can get...</span>
+                                    <span class="time">Yesterday</span>
+                                </div>
+                                <div class="media-right is-centered">
+                                    <div class="added-icon">
+                                        <i data-feather="message-square"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Message -->
+                            <div class="media">
+                                <figure class="media-left">
+                                    <p class="image">
+                                        <img src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/edward.jpeg" data-user-popover="5" alt="">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <a href="#">Edward Mayers</a>
+                                    <span>That was a real pleasure seeing you last time we really should...</span>
+                                    <span class="time">last week</span>
+                                </div>
+                                <div class="media-right is-centered">
+                                    <div class="added-icon">
+                                        <i data-feather="message-square"></i>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Message -->
+                            <div class="media">
+                                <figure class="media-left">
+                                    <p class="image">
+                                        <img src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/dan.jpg" data-user-popover="1" alt="">
+                                    </p>
+                                </figure>
+                                <div class="media-content">
+                                    <a href="#">Dan Walker</a>
+                                    <span>Hey there, would it be possible to borrow your bicycle, i really need...</span>
+                                    <span class="time">Jun 03 2018</span>
+                                </div>
+                                <div class="media-right is-centered">
+                                    <div class="added-icon">
+                                        <i data-feather="message-square"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="nav-drop-footer">
+                            <a href="#">Clear All</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar-item is-icon open-chat">
+                <a class="icon-link is-primary" href="javascript:void(0);">
+                    <i data-feather="message-square"></i>
+                    <span class="indicator"></span>
+                </a>
+            </div>
+
+            <div id="mobile-explorer-trigger" class="navbar-item is-icon">
+                <a class="icon-link is-primary">
+                    <i class="mdi mdi-apps"></i>
+                </a>
+            </div>
+
+            <!-- Mobile menu toggler icon -->
+            <div class="navbar-burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        <!-- Navbar mobile menu -->
+        <div class="navbar-menu">
+            <!-- Account -->
+            <div class="navbar-item has-dropdown is-active">
+                <div class="navbar-link">
+                    <img src="https://via.placeholder.com/150x150" data-demo-src="assets/img/avatars/jenna.png" alt="">
+                    <span class="is-heading">Jenna</span>
+                </div>
+
+                <!-- Mobile Dropdown -->
+                <div class="navbar-dropdown">
+                    <a href="#" class="navbar-item is-flex is-mobile-icon">
+                        <span><i data-feather="user"></i>Profile</span>
+                    </a>
+                    <a href="#" class="navbar-item is-flex is-mobile-icon">
+                        <span><i data-feather="shopping-cart"></i>Cart</span>
+                        <span class="menu-badge">3</span>
+                    </a>
+                    <a href="#" class="navbar-item is-flex is-mobile-icon">
+                        <span><i data-feather="activity"></i>Feed</span>
+                        <span class="menu-badge">87</span>
+                    </a>
+                    <a href="#" class="navbar-item is-flex is-mobile-icon">
+                        <span><i data-feather="settings"></i>Settings</span>
+                    </a>
+                    <a href="#" class="navbar-item is-flex is-mobile-icon">
+                        <span><i data-feather="hexagon"></i>Logout</span>
+                    </a>
+                </div>
+            </div>
+
+            <!-- More -->
+            <div class="navbar-item has-dropdown">
+                <a class="navbar-link">
+                    <i data-feather="life-buoy"></i>
+                    <span class="is-heading">Assistance</span>
+                </a>
+
+                <!-- Mobile Dropdown -->
+                <div class="navbar-dropdown">
+                    <a href="#" class="navbar-item">Help</a>
+                    <a href="#" class="navbar-item">Support</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="view-wrapper">
+
+        <!-- Container -->
+        <div id="main-feed" class="container">
+
+            <!-- Content placeholders at page load -->
+            <!-- /html/partials/global/placeload/feed-page/feed-menu-shadow-dom.html -->
+            <!-- this holds the animated content placeholders that show up before content -->
+            <div id="shadow-dom" class="view-wrap">
+                <div class="columns">
+
+                    <div class="column is-3">
+
+                        <!-- /html/partials/global/placeload/placeloads/questions-menu-placeload.html -->
+                        <div class="placeload is-bold questions-menu-placeload">
+                            <div class="inner-wrap">
+                                <div class="content-shape loads"></div>
+                                <div class="content-shape loads"></div>
+                                <div class="content-shape loads"></div>
+                                <div class="content-shape loads"></div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="column is-6">
+
+                        <!-- Placeload element -->
+                        <div class="placeload compose-placeload">
+                            <div class="header">
+                                <div class="content-shape is-lg loads"></div>
+                                <div class="content-shape is-lg loads"></div>
+                                <div class="content-shape is-lg loads"></div>
+                            </div>
+                            <div class="body">
+                                <div class="img loads"></div>
+                                <div class="inner-wrap">
+                                    <div class="content-shape loads"></div>
+                                    <div class="content-shape loads"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Placeload element -->
+                        <div class="placeload post-placeload">
+                            <div class="header">
+                                <div class="img loads"></div>
+                                <div class="header-content">
+                                    <div class="content-shape loads"></div>
+                                    <div class="content-shape loads"></div>
+                                </div>
+                            </div>
+                            <div class="image-placeholder loads"></div>
+                            <div class="placeholder-footer">
+                                <div class="footer-block">
+                                    <div class="img loads"></div>
+                                    <div class="inner-wrap">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Placeload element -->
+                        <div class="placeload post-placeload">
+                            <div class="header">
+                                <div class="img loads"></div>
+                                <div class="header-content">
+                                    <div class="content-shape loads"></div>
+                                    <div class="content-shape loads"></div>
+                                </div>
+                            </div>
+                            <div class="image-placeholder loads"></div>
+                            <div class="placeholder-footer">
+                                <div class="footer-block">
+                                    <div class="img loads"></div>
+                                    <div class="inner-wrap">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Placeload element -->
+                        <div class="placeload post-placeload">
+                            <div class="header">
+                                <div class="img loads"></div>
+                                <div class="header-content">
+                                    <div class="content-shape loads"></div>
+                                    <div class="content-shape loads"></div>
+                                </div>
+                            </div>
+                            <div class="image-placeholder loads"></div>
+                            <div class="placeholder-footer">
+                                <div class="footer-block">
+                                    <div class="img loads"></div>
+                                    <div class="inner-wrap">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Placeload element -->
+                        <div class="placeload post-placeload">
+                            <div class="header">
+                                <div class="img loads"></div>
+                                <div class="header-content">
+                                    <div class="content-shape loads"></div>
+                                    <div class="content-shape loads"></div>
+                                </div>
+                            </div>
+                            <div class="image-placeholder loads"></div>
+                            <div class="placeholder-footer">
+                                <div class="footer-block">
+                                    <div class="img loads"></div>
+                                    <div class="inner-wrap">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="column is-3">
+
+                        <!-- Placeload element -->
+                        <div class="placeload stories-placeload">
+                            <div class="header">
+                                <div class="content-shape loads"></div>
+                            </div>
+                            <div class="body">
+                                <div class="flex-block">
+                                    <div class="img loads"></div>
+                                    <div class="inner-wrap">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                                <div class="flex-block">
+                                    <div class="img loads"></div>
+                                    <div class="inner-wrap">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                                <div class="flex-block">
+                                    <div class="img loads"></div>
+                                    <div class="inner-wrap">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                                <div class="flex-block">
+                                    <div class="img loads"></div>
+                                    <div class="inner-wrap">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Placeload element -->
+                        <div class="placeload mini-widget-placeload">
+                            <div class="body">
+                                <div class="inner-wrap">
+                                    <div class="img loads"></div>
+                                    <div class="content-shape loads"></div>
+                                    <div class="content-shape loads"></div>
+                                    <div class="content-shape loads"></div>
+                                    <div class="button-shape loads"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Placeload element -->
+                        <div class="placeload list-placeload">
+                            <div class="header">
+                                <div class="content-shape loads"></div>
+                            </div>
+                            <div class="body">
+                                <div class="flex-block">
+                                    <div class="img loads"></div>
+                                    <div class="inner-wrap">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                                <div class="flex-block">
+                                    <div class="img loads"></div>
+                                    <div class="inner-wrap">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                                <div class="flex-block">
+                                    <div class="img loads"></div>
+                                    <div class="inner-wrap">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                                <div class="flex-block">
+                                    <div class="img loads"></div>
+                                    <div class="inner-wrap">
+                                        <div class="content-shape loads"></div>
+                                        <div class="content-shape loads"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- Feed page main wrapper -->
+            <div id="activity-feed" class="view-wrap true-dom is-hidden">
+                <div class="columns">
+                    <!-- Left side column -->
+                    <div class="column is-3 is-hidden-mobile">
+                        <!-- Feed menu -->
+                        <div class="feed-menu-v1">
+                            
+                        </div>
+                    </div>
+                    <!-- /Left side column -->
+
+                    <!-- Middle column -->
+                    <div class="column is-6">
+
+                        <!-- Publishing Area -->
+                        <!-- /partials/pages/feed/compose-card.html -->
+                        <div id="compose-card" class="card is-new-content">
+                            <!-- Top tabs -->
+                            <div class="tabs-wrapper">
+                                <div class="tabs is-boxed is-fullwidth">
+                                    <ul>
+                                        <li class="is-active">
+                                            <a>
+                                                <span class="icon is-small"><i data-feather="edit-3"></i></span>
+                                                <span>Publish</span>
+                                            </a>
+                                        </li>
+                                        
+                                        <!-- Close X button -->
+                                        <li class="close-wrap">
+                                            <span class="close-publish">
+                                                    <i data-feather="x"></i>
+                                                </span>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <!-- Tab content -->
+                                <div class="tab-content">
+                                    <!-- Compose form -->
+                                <form action='.' method='post'>
+                                {% csrf_token %}
+                                    <div class="compose">
+                                        <div class="compose-form">
+                                            <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/jenna.png" alt="">
+                                            <div class="control">
+                                                <textarea id="publish" name="text" class="textarea" rows="3" placeholder="Write something..."></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div id="options-summary" class="options-summary"></div>
+
+                                        <div id="tag-suboption" class="is-autocomplete is-suboption is-hidden">
+                                            <!-- Tag friends suboption -->
+                                            <div id="tag-list" class="tag-list"></div>
+                                            <div class="control">
+                                                <input id="users-autocpl" type="text" class="input" placeholder="Who are you with?">
+                                                <div class="icon">
+                                                    <i data-feather="search"></i>
+                                                </div>
+                                                <div class="close-icon is-main">
+                                                    <i data-feather="x"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- /Tag friends suboption -->
+
+                                        <!-- Activities suboption -->
+                                        <div id="activities-suboption" class="is-autocomplete is-suboption is-hidden">
+                                            <div id="activities-autocpl-wrapper" class="control has-margin">
+                                                <input id="activities-autocpl" type="text" class="input" placeholder="What are you doing right now?">
+                                                <div class="icon">
+                                                    <i data-feather="search"></i>
+                                                </div>
+                                                <div class="close-icon is-main">
+                                                    <i data-feather="x"></i>
+                                                </div>
+                                            </div>
+
+                                            <!-- Mood suboption -->
+                                            <div id="mood-autocpl-wrapper" class="is-autocomplete is-activity is-hidden">
+                                                <div class="control has-margin">
+                                                    <input id="mood-autocpl" type="text" class="input is-subactivity" placeholder="How do you feel?">
+                                                    <div class="input-block">
+                                                        Feels
+                                                    </div>
+                                                    <div class="close-icon is-subactivity">
+                                                        <i data-feather="x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Drinking suboption child -->
+                                            <div id="drinking-autocpl-wrapper" class="is-autocomplete is-activity is-hidden">
+                                                <div class="control has-margin">
+                                                    <input id="drinking-autocpl" type="text" class="input is-subactivity" placeholder="What are you drinking?">
+                                                    <div class="input-block">
+                                                        Drinks
+                                                    </div>
+                                                    <div class="close-icon is-subactivity">
+                                                        <i data-feather="x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Eating suboption child -->
+                                            <div id="eating-autocpl-wrapper" class="is-autocomplete is-activity is-hidden">
+                                                <div class="control has-margin">
+                                                    <input id="eating-autocpl" type="text" class="input is-subactivity" placeholder="What are you eating?">
+                                                    <div class="input-block">
+                                                        Eats
+                                                    </div>
+                                                    <div class="close-icon is-subactivity">
+                                                        <i data-feather="x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Reading suboption child -->
+                                            <div id="reading-autocpl-wrapper" class="is-autocomplete is-activity is-hidden">
+                                                <div class="control has-margin">
+                                                    <input id="reading-autocpl" type="text" class="input is-subactivity" placeholder="What are you reading?">
+                                                    <div class="input-block">
+                                                        Reads
+                                                    </div>
+                                                    <div class="close-icon is-subactivity">
+                                                        <i data-feather="x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Watching suboption child -->
+                                            <div id="watching-autocpl-wrapper" class="is-autocomplete is-activity is-hidden">
+                                                <div class="control has-margin">
+                                                    <input id="watching-autocpl" type="text" class="input is-subactivity" placeholder="What are you watching?">
+                                                    <div class="input-block">
+                                                        Watches
+                                                    </div>
+                                                    <div class="close-icon is-subactivity">
+                                                        <i data-feather="x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <!-- Travel suboption child -->
+                                            <div id="travel-autocpl-wrapper" class="is-autocomplete is-activity is-hidden">
+                                                <div class="control has-margin">
+                                                    <input id="travel-autocpl" type="text" class="input is-subactivity" placeholder="Where are you going?">
+                                                    <div class="input-block">
+                                                        Travels
+                                                    </div>
+                                                    <div class="close-icon is-subactivity">
+                                                        <i data-feather="x"></i>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <!-- /Activities suboption -->
+
+                                        <!-- Location suboption -->
+                                        <div id="location-suboption" class="is-autocomplete is-suboption is-hidden">
+                                            <div id="location-autocpl-wrapper" class="control is-location-wrapper has-margin">
+                                                <input id="location-autocpl" type="text" class="input" placeholder="Where are you now?">
+                                                <div class="icon">
+                                                    <i data-feather="map-pin"></i>
+                                                </div>
+                                                <div class="close-icon is-main">
+                                                    <i data-feather="x"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- Link suboption -->
+                                        <div id="link-suboption" class="is-autocomplete is-suboption is-hidden">
+                                            <div id="link-autocpl-wrapper" class="control is-location-wrapper has-margin">
+                                                <input id="link-autocpl" type="text" class="input" placeholder="Enter the link URL">
+                                                <div class="icon">
+                                                    <i data-feather="link-2"></i>
+                                                </div>
+                                                <div class="close-icon is-main">
+                                                    <i data-feather="x"></i>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- GIF suboption -->
+                                        <div id="gif-suboption" class="is-autocomplete is-suboption is-hidden">
+                                            <div id="gif-autocpl-wrapper" class="control is-gif-wrapper has-margin">
+                                                <input id="gif-autocpl" type="text" class="input" placeholder="Search a GIF to add" autofocus>
+                                                <div class="icon">
+                                                    <i data-feather="search"></i>
+                                                </div>
+                                                <div class="close-icon is-main">
+                                                    <i data-feather="x"></i>
+                                                </div>
+                                                <div class="gif-dropdown">
+                                                    <div class="inner">
+                                                        <div class="gif-block">
+                                                            <img src="https://via.placeholder.com/478x344" data-demo-src="assets/img/demo/gif/1.gif" alt="">
+                                                            <img src="https://via.placeholder.com/478x344" data-demo-src="assets/img/demo/gif/2.gif" alt="">
+                                                            <img src="https://via.placeholder.com/478x344" data-demo-src="assets/img/demo/gif/3.gif" alt="">
+                                                            <img src="https://via.placeholder.com/478x344" data-demo-src="assets/img/demo/gif/4.gif" alt="">
+                                                        </div>
+                                                        <div class="gif-block">
+                                                            <img src="https://via.placeholder.com/478x344" data-demo-src="assets/img/demo/gif/5.gif" alt="">
+                                                            <img src="https://via.placeholder.com/478x344" data-demo-src="assets/img/demo/gif/6.gif" alt="">
+                                                            <img src="https://via.placeholder.com/478x344" data-demo-src="assets/img/demo/gif/7.gif" alt="">
+                                                            <img src="https://via.placeholder.com/478x344" data-demo-src="assets/img/demo/gif/8.gif" alt="">
+                                                        </div>
+                                                        <div class="gif-block">
+                                                            <img src="https://via.placeholder.com/478x344" data-demo-src="assets/img/demo/gif/9.gif" alt="">
+                                                            <img src="https://via.placeholder.com/478x344" data-demo-src="assets/img/demo/gif/10.gif" alt="">
+                                                            <img src="https://via.placeholder.com/478x344" data-demo-src="assets/img/demo/gif/11.gif" alt="">
+                                                            <img src="https://via.placeholder.com/478x344" data-demo-src="assets/img/demo/gif/12.gif" alt="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <!-- /Compose form -->
+
+                                    <!-- General extended options -->
+                                    <div id="extended-options" class="compose-options is-hidden">
+                                        <div class="columns is-multiline is-full">
+                                            <!-- Upload action -->
+                                            <div class="column is-6 is-narrower">
+                                                <div class="compose-option is-centered">
+                                                    <i data-feather="camera"></i>
+                                                    <span>Photo/Video</span>
+                                                    <input type="file" name="image">
+                                                </div>
+                                            </div>
+                                            <!-- Mood action -->
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- /General extended options -->
+
+                                    <!-- General basic options -->
+                                    <div id="basic-options" class="compose-options">
+                                        <!-- Upload action -->
+                                        <div class="compose-option">
+                                            <i data-feather="camera"></i>
+                                            <span>Media</span>
+                                            <input type="file" name="image">
+                                        </div>
+                                        <!-- Mood action -->
+                                        
+                                    </div>
+                                    <!-- /General basic options -->
+
+                                    <!-- Hidden Options -->
+                                    <div class="hidden-options">
+                                       
+
+                                        <!-- Friends list -->
+                                        <div class="friends-list is-hidden">
+                                            <!-- Header -->
+                                            <div class="list-header">
+                                                <span>Send in a message</span>
+                                                <div class="actions">
+                                                    <a id="open-compose-search" href="javascript:void(0);" class="search-trigger">
+                                                        <i data-feather="search"></i>
+                                                    </a>
+                                                    <!-- Hidden filter input -->
+                                                    <div id="compose-search" class="control is-hidden">
+                                                        <input type="text" class="input" placeholder="Search People">
+                                                        <span>
+                                                                <i data-feather="search"></i>
+                                                            </span>
+                                                    </div>
+                                                    <a href="javascript:void(0);" class="is-inverted modal-trigger" data-modal="create-group-modal">Create group</a>
+                                                </div>
+                                            </div>
+                                            <!-- List body -->
+                                            <div class="list-body">
+
+                                                <!-- Friend -->
+                                                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Footer buttons -->
+                                    <div class="more-wrap">
+                                        <!-- View more button -->
+                                        
+                                        <!-- Publish button -->
+                                        <button id="publish-button" type="submit" class="button is-solid accent-button is-fullwidth ">
+                                            Publish
+                                        </button>
+                                    </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Post 1 -->
+                        <!-- /partials/pages/feed/posts/feed-post1.html -->
+                        <!-- POST #1 -->
+                        <div id="feed-post-1" class="card is-post">
+                            <!-- Main wrap -->
+                            <div class="content-wrap">
+                                <!-- Post header -->
+                                <div class="card-heading">
+                                    <!-- User meta -->
+                                    <div class="user-block">
+                                        <div class="image">
+                                            <img src="https://via.placeholder.com/300x300" data-demo-src="assets/img/avatars/dan.jpg" data-user-popover="1" alt="">
+                                        </div>
+                                        <div class="user-info">
+                                            <a href="#">Dan Walker</a>
+                                            <span class="time">July 26 2018, 01:03pm</span>
+                                        </div>
+                                    </div>
+                                    <!-- Right side dropdown -->
+                                    <!-- /partials/pages/feed/dropdowns/feed-post-dropdown.html -->
+                                    <div class="dropdown is-spaced is-right is-neutral dropdown-trigger">
+                                        <div>
+                                            <div class="button">
+                                                <i data-feather="more-vertical"></i>
+                                            </div>
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+                                <!-- /Post header -->
+
+                                <!-- Post body -->
+                                <div class="card-body">
+                                    <!-- Post body text -->
+                                    <div class="post-text">
+                                        <p>Yesterday with
+                                            <a href="#">@Karen Miller</a> and
+                                            <a href="#">@Marvin Stemperd</a> at the
+                                            <a href="#">#Rock'n'Rolla</a> concert in LA. Was totally fantastic! People were really excited about this one!</p>
+                                    </div>
+                                    <!-- Featured image -->
+                                    <div class="post-image">
+                                        <a data-fancybox="post1" data-lightbox-type="comments" data-thumb="assets/img/demo/unsplash/1.jpg" href="https://via.placeholder.com/1600x900" data-demo-href="assets/img/demo/unsplash/1.jpg">
+                                            <img src="https://via.placeholder.com/1600x900" data-demo-src="assets/img/demo/unsplash/1.jpg" alt="">
+                                        </a>
+                                        <!-- Action buttons -->
+                                        <!-- /partials/pages/feed/buttons/feed-post-actions.html -->
+                                        
+                                    </div>
+                                </div>
+                                <!-- /Post body -->
+
+                                <!-- Post footer -->
+                               
+                                <!-- /Post footer -->
+                            </div>
+                            <!-- /Main wrap -->
+
+                            
+    </div>
+    <!-- Concatenated js plugins and jQuery -->
+    <script src="{% static 'js/app.js'%}"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+
+    <!-- Core js -->
+    <script src="{% static 'data/tipuedrop_content.js' %}"></script>
+    <script src="{% static 'js/global.js' %}"></script>
+    <script src="{% static 'js/main.js' %}"></script>
+
+    <!-- Page and UI related js -->
+    <script src="{% static 'js/feed.js' %}"></script>
+    <script src="{% static 'js/stories.js' %}"></script>
+    <script src="{% static 'js/chat.js ' %}"></script>
+    <script src="{% static 'js/inbox.js' %}"></script>
+    <script src="{% static 'js/profile.js' %}"></script>
+    <script src="{% static 'js/friends.js' %}"></script>
+    <script src="{% static 'js/events.js' %}"></script>
+    <script src="{% static 'js/explorer.js' %}"></script>
+    <script src="{% static 'js/news.js' %}"></script>
+    <script src="{% static 'js/questions.js' %}"></script>
+    <script src="{% static 'js/videos.js' %}"></script>
+    <script src="{% static 'js/shop.js' %}"></script>
+    <script src="{% static 'js/settings.js' %}"></script>
+
+    <!-- Components js -->
+    <script src="{% static 'js/widgets.js' %}"></script>
+    <script src="{% static 'js/autocompletes.js' %}"></script>
+    <script src="{% static 'js/modal-uploader.js' %}"></script>
+    <script src="{% static 'js/popovers-users.js' %}"></script>
+    <script src="{% static 'js/popovers-pages.js' %}"></script>
+    <script src="{% static 'js/go-live.js' %}"></script>
+    <script src="{% static 'js/lightbox.js' %}"></script>
+    <script src="{% static 'js/touch.js' %}"></script>
+    <script src="{% static 'js/tour.js' %}"></script>
+</body>
+
+</html>
